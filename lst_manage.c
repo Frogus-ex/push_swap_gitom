@@ -6,23 +6,11 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:15:26 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/16 12:58:53 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/17 14:16:15 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_node	*create_node(int value)
-{
-	t_node	*node;
-
-	node = malloc(sizeof(t_node));
-	if (!node)
-		return (NULL);
-	node->value = value;
-	node->next = NULL;
-	return (node);
-}
 
 void	add_node_front(t_node **head, t_node *new)
 {
@@ -45,16 +33,65 @@ int	ps_lstsize(t_node *node)
 	return (i);
 }
 
-void	swap_stack(t_node **stack)
+int	get_min_pos(t_node *stack)
 {
-	t_node	*first;
-	t_node	*second;
+	int		i;
+	int		min_value;
+	int		pos;
+	t_node	*tmp;
 
-	if (!stack || !(*stack)->next || !*stack)
-		return ;
-	first = *stack;
-	second = (*stack)->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
+	i = 0;
+	pos = 0;
+	tmp = stack;
+	min_value = stack->value;
+	while (tmp)
+	{
+		if (min_value > tmp->value)
+		{
+			min_value = tmp->value;
+			pos = i;
+		}
+		tmp = tmp->next;
+		i++;
+	}
+	return (pos);
+}
+
+int	get_min_value(t_node *stack)
+{
+	int		min_value;
+	t_node	*tmp;
+
+	tmp = stack;
+	if (!stack)
+		return (INT_MAX);
+	min_value = stack->value;
+	while (tmp)
+	{
+		if (min_value > tmp->value)
+			min_value = tmp->value;
+		tmp = tmp->next;
+	}
+	return (min_value);
+}
+
+void	get_min_front(t_node **stack)
+{
+	int		index;
+	int		lst_size;
+	int		i;
+
+	lst_size = ps_lstsize(*stack);
+	index = get_min_pos(*stack);
+	i = lst_size - index;
+	if (index <= lst_size / 2)
+	{
+		while (index--)
+			rotate_a(stack);
+	}
+	else
+	{
+		while (i--)
+			reverse_rot_a(stack);
+	}
 }

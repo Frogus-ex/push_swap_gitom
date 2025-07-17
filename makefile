@@ -1,10 +1,11 @@
 NAME    = push_swap
-SRC     = swap.c \
+SRC     = swap.c\
 		utils.c\
 		lst_manage.c\
 		push.c\
 		rotate.c\
 		reverse_rot.c\
+		sorting.c\
 		main.c
 
 OBJ     = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 14:08:06 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/16 16:11:37 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/17 14:23:33 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,21 @@ void	reverse_rot_stack(t_node **stack)
 	*stack = last;
 }
 
-void	reverse_rot_a(t_stack *stack)
+void	reverse_rot_a(t_node **stack)
 {
-	reverse_rot_stack(&stack.a);
+	reverse_rot_stack(stack);
 	ft_printf("rra\n");
 }
 
-void	reverse_rot_b(t_stack *stack)
+void	reverse_rot_b(t_node **stack)
 {
-	reverse_rot_stack(&stack.b);
+	reverse_rot_stack(stack);
 	ft_printf("rrb\n");
 }
 
-void	reverse_rot_ab(t_stack *stack)
+void	reverse_rot_ab(t_node **a, t_node **b)
 {
-	reverse_rot_a(stack);
-	reverse_rot_b(stack);
+	reverse_rot_a(a);
+	reverse_rot_b(b);
 	ft_printf("rrr\n");
 }

@@ -30,6 +30,7 @@ SRC  = ft_isalpha.c \
 	ft_striteri.c \
 	ft_strjoin.c \
 	ft_split.c \
+	ft_atoi.c \
 
 OBJ  = $(SRC:.c=.o)
 
