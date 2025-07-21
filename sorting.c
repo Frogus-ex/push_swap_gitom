@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 16:56:36 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/17 14:52:04 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/21 13:34:43 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void	sort_five_four(t_stack	*stack)
 		while (ps_lstsize(stack->a) > 2)
 		{
 			get_min_front(&stack->a);
-			push_b(&stack->a, &stack->b);
+			push_b(stack);
 		}
 		if (ps_lstsize(stack->a) && (stack->a->value > stack->a->next->value))
 			swap_a(&stack->a);
 		while (stack->b)
-			push_a(&stack->b, &stack->a);
+			push_a(stack);
 	}
 }

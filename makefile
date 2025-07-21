@@ -6,6 +6,10 @@ SRC     = swap.c\
 		rotate.c\
 		reverse_rot.c\
 		sorting.c\
+		greedy_sort.c\
+		chunk_manager.c\
+		node_manager.c\
+		parsing.c\
 		main.c
 
 OBJ     = $(SRC:.c=.o)

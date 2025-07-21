@@ -6,19 +6,11 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:15:26 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/17 14:16:15 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/21 11:17:52 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	add_node_front(t_node **head, t_node *new)
-{
-	if (!new)
-		return ;
-	new->next = *head;
-	*head = new;
-}
 
 int	ps_lstsize(t_node *node)
 {

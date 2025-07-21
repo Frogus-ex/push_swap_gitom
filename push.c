@@ -6,34 +6,38 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:02:58 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/17 14:49:25 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:01:22 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_node **b, t_node **a)
+void	push_a(t_stack *stack)
 {
 	t_node	*tmp;
 
-	if (!b || !*b)
+	if (!stack->b)
 		return ;
-	tmp = *b;
-	*b = (*b)->next;
-	tmp->next = *a;
-	*a = tmp;
+	tmp = stack->b;
+	stack->b = stack->b->next;
+	tmp->next = stack->a;
+	stack->a = tmp;
+	stack->size_b--;
+	stack->size_a++;
 	ft_printf("pa\n");
 }
 
-void	push_b(t_node **a, t_node **b)
+void	push_b(t_stack *stack)
 {
 	t_node	*tmp;
 
-	if (!a || !*a)
+	if (!stack->a)
 		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = *b;
-	*b = tmp;
+	tmp = stack->a;
+	stack->a = stack->a->next;
+	tmp->next = stack->b;
+	stack->b = tmp;
+	stack->size_b++;
+	stack->size_a--;
 	ft_printf("pb\n");
 }
