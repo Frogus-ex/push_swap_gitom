@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:02:58 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/21 15:01:22 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/22 18:53:38 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push_a(t_stack *stack)
 	stack->a = tmp;
 	stack->size_b--;
 	stack->size_a++;
-	ft_printf("pa\n");
+	write(1, "pa\n", 3);
 }
 
 void	push_b(t_stack *stack)
@@ -39,5 +39,5 @@ void	push_b(t_stack *stack)
 	stack->b = tmp;
 	stack->size_b++;
 	stack->size_a--;
-	ft_printf("pb\n");
+	write(1, "pb\n", 3);
 }

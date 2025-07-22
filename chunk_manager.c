@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:14:12 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/21 15:33:46 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/22 18:39:51 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,12 @@ void	push_b_in_a(t_stack *stack)
 	int	pos;
 	int	i;
 
+	if (!stack->b)
+		return ;
 	i = 0;
 	pos = 0;
+	stack->size_b = ps_lstsize(stack->b);
+	stack->size_a = ps_lstsize(stack->a);
 	pos = get_max_pos(stack->b);
 	if (pos <= stack->size_b / 2)
 	{
@@ -101,5 +105,7 @@ void	push_b_in_a(t_stack *stack)
 			reverse_rot_b(&stack->b);
 	}
 	push_a(stack);
+	if (stack->b)
+		rotate_a(&stack->a);
 }
 

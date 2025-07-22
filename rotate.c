@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:28:54 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/21 14:24:02 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/22 18:52:47 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ void	rotate_stack(t_node **stack)
 void	rotate_a(t_node **stack)
 {
 	rotate_stack(stack);
-	ft_printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	rotate_b(t_node **stack)
 {
 	rotate_stack(stack);
-	printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 void	rotate_ab(t_node **a, t_node **b)
 {
 	rotate_stack(a);
 	rotate_stack(b);
-	ft_printf("rr\n");
+	write(1, "rr\n", 3);
 }

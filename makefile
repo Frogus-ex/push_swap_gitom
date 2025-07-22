@@ -13,7 +13,7 @@ SRC     = swap.c\
 		main.c
 
 OBJ     = $(SRC:.c=.o)
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror -ggdb
 CC      = cc
 LIBFT   = ./libft/libft.a
 PRINTF  = ./printf/libftprintf.a

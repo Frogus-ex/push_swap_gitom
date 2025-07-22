@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:23:50 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/21 19:15:27 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/22 17:05:29 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,10 @@ int		is_numerique(char *str);
 void	add_node_back(t_node **back, t_node *new);
 int		parse_input(char **av, t_stack *stack);
 t_node	*ft_lstlast(t_node *lst);
-void	ft_error(t_stack *stack, char *str);
-int		ft_atol(t_stack *stack, const char *str);
+void	ft_error(t_stack *stack);
+int		ft_atol(const char *str);
 char	*join_ps(char **av);
-
+void	free_tab(char **tab);
+int		join_len(char **av);
 
 #endif
