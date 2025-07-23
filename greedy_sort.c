@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 16:09:21 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/22 18:45:29 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/23 17:29:22 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	*tab_copy(t_node *stack, int *size_a)
 	i = 0;
 	*size_a = ps_lstsize(stack);
 	tab = malloc(sizeof(int) * (*size_a));
+	if (!tab)
+		return (NULL);
 	while (stack)
 	{
 		tab[i] = stack->value;
@@ -86,7 +88,7 @@ void	process_chunk(t_stack *stack, int min, int max)
 			while (i--)
 				reverse_rot_a(&stack->a);
 		}
-		else
+		else if (pos <= stack->size_a / 2)
 		{
 			while (pos--)
 				rotate_a(&stack->a);

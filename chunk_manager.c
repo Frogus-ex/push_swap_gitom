@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:14:12 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/22 18:39:51 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:23:49 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,5 @@ void	push_b_in_a(t_stack *stack)
 			reverse_rot_b(&stack->b);
 	}
 	push_a(stack);
-	if (stack->b)
-		rotate_a(&stack->a);
 }
 
