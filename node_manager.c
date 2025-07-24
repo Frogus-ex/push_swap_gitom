@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:02:50 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/21 13:03:54 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/24 16:43:41 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,6 @@ void	add_node_back(t_node **back, t_node *new)
 	}
 	else
 		ft_lstlast(*back)->next = new;
-}
-
-void	add_node_front(t_node **head, t_node *new)
-{
-	if (!new)
-		return ;
-	new->next = *head;
-	*head = new;
 }
 
 t_node	*ft_lstlast(t_node *lst)

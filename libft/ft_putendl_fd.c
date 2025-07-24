@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 14:23:30 by tlorette          #+#    #+#             */
-/*   Updated: 2025/05/01 14:31:07 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/24 11:58:59 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-// int	main()
-// {
-// 	ft_putendl_fd("gg bg", 1);
-// }

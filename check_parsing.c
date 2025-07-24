@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 11:11:38 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/23 11:11:40 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:51:59 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ static size_t	get_len(char *s)
 	size_t	i;
 
 	i = 0;
-	if (s[i] == '+' || s[i] == '-')
-		i++;
-	if (!ft_isdigit(s[i]))
-		return (0);
-	while (ft_isdigit(s[i]))
+	while (s[i])
 		i++;
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:23:50 by tlorette          #+#    #+#             */
-/*   Updated: 2025/07/23 17:43:52 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/07/24 16:43:39 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ typedef struct s_stack
 }	t_stack;
 
 t_node	*create_node(int value);
-void	add_node_front(t_node **head, t_node *new);
 int		ps_lstsize(t_node *node);
 void	free_stack(t_node **stack);
-void	print_stack(t_node *stack);
 int		main(int ac, char **av);
 void	swap_stack(t_node **stack);
 void	swap_a(t_node **stack);
@@ -70,7 +68,6 @@ int		get_chunk_pos(t_node *stack, int min, int max);
 int		get_max_pos(t_node *b);
 void	push_b_in_a(t_stack *stack);
 void	greedy_sort(t_stack *stack);
-int		is_numerique(char *str);
 void	add_node_back(t_node **back, t_node *new);
 int		parse_input(char **av, t_stack *stack);
 t_node	*ft_lstlast(t_node *lst);
@@ -78,5 +75,6 @@ void	ft_error(t_stack *stack);
 int		ft_atol(const char *str, int *error);
 char	*join_ps(char **av);
 void	free_tab(char **tab);
+int		is_sorted(t_node *stack);
 
 #endif
