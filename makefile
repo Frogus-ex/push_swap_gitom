@@ -12,7 +12,6 @@ SRC     = operations/swap.c\
 		node_manager.c\
 		parsing.c\
 		check_parsing.c\
-		ps_opti.c\
 		main.c
 
 OBJ     = $(SRC:.c=.o)
